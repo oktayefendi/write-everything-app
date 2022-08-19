@@ -20,3 +20,8 @@ Route::get('/', function () {
 Route::get('/home', function () {
     return view('home');
 });
+
+Route::get('/create', function () {
+    return view('post-create.create');
+});
+
