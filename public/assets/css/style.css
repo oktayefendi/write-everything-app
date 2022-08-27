@@ -1,0 +1,21 @@
+#hero {
+    background-image: url(../img/home-bg.png);
+    background-size: cover;
+}
+
+#hero h1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72.8px;
+    line-height: 109px;
+    color: #FFFFFF;
+    text-align: center;
+}
+
+#hero .shoutinput {
+    background: #262626;
+    border-radius: 10px;
+    border: none;
+    color: #FFFFFF;
+}

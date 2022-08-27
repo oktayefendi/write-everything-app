@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
+use App\Models\Post;
+use Illuminate\Support\Str;
+
 
 class PostController extends Controller
 {
@@ -13,7 +15,9 @@ class PostController extends Controller
      */
     public function index()
     {
-        //
+        $posts = Post::orderBy('updated_at', 'DESC')->get();
+
+        return view('home', compact('posts'));
     }
 
     /**
@@ -34,7 +38,18 @@ class PostController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'body' => 'required',
+        ]);
+
+        Post::create([
+
+            'slug' => Str::random(50),
+            'body' => $request->body,
+
+        ]);
+
+        return redirect()->back()->with('messages', 'Shout has been created successfully!');
     }
 
     /**
