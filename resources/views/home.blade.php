@@ -5,16 +5,10 @@
 
 <section id="hero">
 <div class="container">
-    <div class="row">
+    <div class="row h-components">
         <h1>Shout Yourself</h1>
-        <form action="{{ route('post.store') }}" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="form-group">
-              <h2 for="message" class="text-light">Your Message</h2>
-              <textarea class="form-control shoutinput" name="body" id="exampleFormControlTextarea1" rows="3" placeholder="What do you think?"></textarea>
-            </div>
-            <button type="submit" class="btn btn-primary m-2">Shout!</button>
-          </form>
+
+        @include('hero.form')
     </div>
 </div>
 </section>
@@ -36,20 +30,23 @@
 
     </div>
 </div>
-
+<section id="newposts">
    <div class="container">
     <div class="row">
         @foreach ($posts as $post)
-        <div class="col-md-3">
-            <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
-                <div class="card-header">{{$post->created_at->diffForHumans()}}</div>
-                <div class="card-body">
-                  <p class="card-text">{{$post->body}}</p>
+        <div class="col-lg-4">
+            <div class="post-new">
+                <div class="post-meta">{{$post->created_at->diffForHumans()}}</div>
+                <div class="post-body">
+                  <p>{{$post->body}}</p>
                 </div>
-                <button class="btn btn-primary" type="button"><i class="fa-regular fa-heart"></i> 38</button>
               </div>
         </div>
         @endforeach
+
+        {!! $posts->links() !!}
+
     </div>
    </div>
+</section>
 @endsection

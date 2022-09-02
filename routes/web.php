@@ -30,3 +30,13 @@ Route::get('/post-add', [PostController::class, 'create'])->name('post.create');
 Route::post('/post-store', [PostController::class, 'store'])->name('post.store');
 
 Route::get('/home', [PostController::class, 'index'])->name('home');
+
+Route::middleware([
+    'auth:sanctum',
+    config('jetstream.auth_session'),
+    'verified'
+])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+});
