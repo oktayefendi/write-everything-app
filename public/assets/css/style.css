@@ -64,6 +64,10 @@
     padding: 10px 0;
 }
 
+.post-body p {
+    word-break: break-word;
+}
+
 #newposts {
     margin: 30px 0;
 }
