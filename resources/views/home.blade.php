@@ -7,7 +7,6 @@
 <div class="container">
     <div class="row h-components">
         <h1>Shout Yourself</h1>
-
         @include('hero.form')
     </div>
 </div>

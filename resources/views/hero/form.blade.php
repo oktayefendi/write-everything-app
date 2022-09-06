@@ -9,7 +9,7 @@
     <button type="submit" class="btn btn-primary m-2">Shout!</button>
   </form>
 @else
-<div class="login-home"><a href="#" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">Log in</a> | <a href="#">Sign Up</a></div>
+<div class="login-home"><a href="/login">Log in</a> | <a href="/register">Sign Up</a></div>
 
 @endauth
 @endif

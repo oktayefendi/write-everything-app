@@ -67,3 +67,21 @@
 #newposts {
     margin: 30px 0;
 }
+
+.login-background {
+    /* The image used */
+    background-image: url("http://127.0.0.1:8000/assets/img/home-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.login-background h1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 72.8px;
+    line-height: 109px;
+    color: #FFFFFF;
+    text-align: center;
+}
