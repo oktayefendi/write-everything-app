@@ -14,7 +14,7 @@ use App\Http\Controllers\PostController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/wel', function () {
     return view('welcome');
 });
 
@@ -29,7 +29,7 @@ Route::get('/post-add', [PostController::class, 'create'])->name('post.create');
 
 Route::post('/post-store', [PostController::class, 'store'])->name('post.store');
 
-Route::get('/home', [PostController::class, 'index'])->name('home');
+Route::get('/', [PostController::class, 'index'])->name('home');
 
 Route::middleware([
     'auth:sanctum',

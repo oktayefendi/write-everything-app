@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>@yield('title') -  Write Everything</title>
+    <title>@yield('title') Shout Yourself</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -16,3 +16,39 @@
 
 </head>
   <body class="bg-dark">
+    <nav class="navbar navbar-expand-lg bg-dark ">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="#">What is this?</a>
+              </li>
+
+            </ul>
+            @if (Route::has('login'))
+@auth
+
+<div class="login-home">
+
+    <form method="POST" action="{{ route('logout') }}">
+        @csrf
+        <x-jet-dropdown-link href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();">
+                {{ __('Logout') }}  <i class="fa-solid fa-arrow-right"></i>
+         </x-jet-dropdown-link>
+ </form>
+</div>
+
+@else
+<div class="login-home">
+    <a href="/login">Log in</a>
+    <a href="/register">Sign Up</a>
+</div>
+
+@endauth
+@endif
+          </div>
+        </div>
+      </nav>

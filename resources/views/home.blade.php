@@ -1,18 +1,16 @@
 @extends('master')
-@section('title', 'Home')
+
 
 @section('content')
 
 <section id="hero">
+
 <div class="container">
-    <div class="row h-components">
+    <div class="h-components">
         <h1>Shout Yourself</h1>
+
         @include('hero.form')
-    </div>
-</div>
-</section>
-<div class="container">
-    <div class="row text-center">
+        <div class="row text-center">
             @if (Session::has('messages'))
             <div class="alert alert-primary" role="alert">
                 {{Session::get('messages')}}
@@ -26,9 +24,11 @@
                 </div>
                 @endforeach
             @endif
-
+    </div>
     </div>
 </div>
+</section>
+
 <section id="newposts">
    <div class="container">
     <div class="row">

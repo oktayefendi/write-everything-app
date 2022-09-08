@@ -39,17 +39,25 @@ class PostController extends Controller
     {
         $request->validate([
             'body' => 'required|max:280',
+        ],
+        [
+            'body.required' => 'Please write a shout.',
+            'body.max' => 'Shout can contain up to 280 characters.'
         ]);
 
         Post::create([
 
             'slug' => Str::random(50),
             'body' => $request->body,
+            'user_id' => auth()->user()->id,
 
         ]);
 
+
         return redirect()->back()->with('messages', 'Shout has been created successfully!');
     }
+
+
 
     /**
      * Display the specified resource.
